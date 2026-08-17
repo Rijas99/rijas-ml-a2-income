@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+tmp/
+.streamlit/secrets.toml
+ML_Assignment_2.pdf
