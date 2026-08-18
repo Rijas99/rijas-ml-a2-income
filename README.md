@@ -31,7 +31,7 @@ Numerical missing values are filled using the median and then scaled. Categorica
 
 ## Live Streamlit app
 
-The public Streamlit link will be added after deployment.
+[https://rijas-income-model-lab.streamlit.app](https://rijas-income-model-lab.streamlit.app)
 
 ## Models used
 
