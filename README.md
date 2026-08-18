@@ -7,3 +7,10 @@ The classification models and Streamlit dashboard will be added step by step.
 ## Data preparation
 
 The `?` values in the dataset are treated as missing values and duplicate rows are removed. The data is divided into 80% training and 20% testing data using a stratified split with random state 42.
+
+## Models added so far
+
+- Logistic Regression
+- Decision Tree
+
+Both models use the same preprocessing steps and test split so their results can be compared fairly.
