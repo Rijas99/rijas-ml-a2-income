@@ -202,7 +202,12 @@ st.markdown(
     .stTabs [data-baseweb="tab"] {
         border-radius: 999px;
         background: rgba(255, 253, 247, 0.8);
+        color: var(--ink);
         padding: 0.4rem 1rem;
+    }
+    .stTabs [data-baseweb="tab"][aria-selected="true"] {
+        color: var(--coral);
+        font-weight: 750;
     }
     #MainMenu, footer, [data-testid="stToolbar"] {
         visibility: hidden;
@@ -485,7 +490,7 @@ else:
     st.dataframe(
         comparison.style.format({metric: "{:.4f}" for metric in METRICS}).highlight_max(
             subset=METRICS,
-            color="#dcefe5",
+            props="background-color: #dcefe5; color: #14213d; font-weight: 750;",
         ),
         width="stretch",
         hide_index=True,
