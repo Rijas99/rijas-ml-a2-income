@@ -44,10 +44,13 @@ The main steps I followed were:
 
 I used `random_state=42` for the split and for models that support it, so the results can be reproduced.
 
-## c. Project links
+## c. GitHub repository link
 
-- GitHub repository: [Rijas99/rijas-ml-a2-income](https://github.com/Rijas99/rijas-ml-a2-income)
-- Live Streamlit app: [Income Model Lab](https://rijas-income-model-lab.streamlit.app)
+[Rijas99/rijas-ml-a2-income](https://github.com/Rijas99/rijas-ml-a2-income)
+
+## Live Streamlit app
+
+[Income Model Lab](https://rijas-income-model-lab.streamlit.app)
 
 ## d. Models used
 
@@ -70,22 +73,19 @@ The following results were obtained from the fixed 20% test split:
 | Logistic Regression | 0.8477 | 0.9020 | 0.7258 | 0.5848 | 0.6477 | 0.5572 |
 | Decision Tree | 0.8520 | 0.8923 | 0.7406 | 0.5878 | 0.6554 | 0.5688 |
 | kNN | 0.8338 | 0.8741 | 0.6700 | 0.6023 | 0.6344 | 0.5284 |
-| Naive Bayes | 0.6173 | 0.8329 | 0.3777 | 0.9242 | 0.5363 | 0.3855 |
+| Naive Bayes | 0.6173 | 0.8329 | 0.3777 | **0.9242** | 0.5363 | 0.3855 |
 | Random Forest | **0.8588** | **0.9148** | **0.7788** | 0.5728 | **0.6601** | **0.5844** |
 
 ## What I observed
 
-**Logistic Regression:** This model gave a strong starting result. Its AUC was the second highest, and it gave a good balance between accuracy and precision. Its recall was lower, so it missed some of the people earning above 50K.
-
-**Decision Tree:** The Decision Tree gave slightly better accuracy, F1, and MCC than Logistic Regression. Its AUC was lower, which means its probability ranking was not as strong.
-
-**kNN:** kNN gave reasonable recall, but its accuracy, AUC, and MCC were lower than Logistic Regression and Decision Tree. One-hot encoding created many input columns, which may make distance-based classification more difficult.
-
-**Naive Bayes:** Naive Bayes had the highest recall at 0.9242. It found most of the higher-income records, but its low precision shows that it also produced many false positive predictions.
-
-**Random Forest:** Random Forest gave the best accuracy, AUC, precision, F1, and MCC. It did not have the highest recall, but it gave the most balanced overall result.
-
-From this comparison, I selected Random Forest as the best model for this dataset. I also found MCC useful because it considers all parts of the confusion matrix and is more informative when the classes are imbalanced.
+| ML Model Name | Observation about model performance |
+|---|---|
+| Logistic Regression | This model gave a strong starting result. Its AUC was the second highest, and it gave a good balance between accuracy and precision. Its lower recall means it missed some people earning above 50K. |
+| Decision Tree | The Decision Tree gave slightly better accuracy, F1, and MCC than Logistic Regression. Its AUC was lower, so its probability ranking was not as strong. |
+| kNN | kNN gave reasonable recall, but its accuracy, AUC, and MCC were lower than Logistic Regression and Decision Tree. The large number of columns created by one-hot encoding may make distance comparison more difficult. |
+| Naive Bayes | Naive Bayes had the highest recall at 0.9242 and found most higher-income records. Its low precision shows that it also produced many false positive predictions. |
+| Random Forest | Random Forest gave the best accuracy, AUC, precision, F1, and MCC. It did not have the highest recall, but it gave the most balanced overall result. |
+| Overall Winner | I selected **Random Forest** because it had the best score in five of the six metrics. MCC was useful here because the income classes are imbalanced. |
 
 ## Streamlit app
 
