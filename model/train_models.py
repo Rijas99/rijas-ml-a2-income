@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     accuracy_score,
@@ -10,6 +11,8 @@ from sklearn.metrics import (
     recall_score,
     roc_auc_score,
 )
+from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.tree import DecisionTreeClassifier
 
@@ -22,6 +25,17 @@ def get_models():
         "Decision Tree": DecisionTreeClassifier(
             max_depth=12,
             min_samples_leaf=5,
+            random_state=42,
+        ),
+        "kNN": KNeighborsClassifier(
+            n_neighbors=9,
+            weights="distance",
+        ),
+        "Naive Bayes": GaussianNB(),
+        "Random Forest": RandomForestClassifier(
+            n_estimators=150,
+            max_depth=18,
+            min_samples_leaf=2,
             random_state=42,
         ),
     }

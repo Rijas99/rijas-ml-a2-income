@@ -12,5 +12,8 @@ The `?` values in the dataset are treated as missing values and duplicate rows a
 
 - Logistic Regression
 - Decision Tree
+- k-Nearest Neighbour
+- Gaussian Naive Bayes
+- Random Forest
 
-Both models use the same preprocessing steps and test split so their results can be compared fairly.
+All models use the same preprocessing steps and test split so their results can be compared fairly.
